@@ -1,0 +1,45 @@
+[
+    {
+        "id": 0, 
+        "login": true, 
+        "users":[ 
+            {
+                "id": 0,
+                "name": "Md. Shahanuzzaman Shantonu", 
+                "username": "shaan", 
+                "password": "shan", 
+                "email": "uits.shaan@gmail.com", 
+                "access_leve": 10,
+                "role": "network engineer", 
+                "admin": true, 
+                "subscriber": true, 
+                "latest": true
+            }, 
+            {
+                "id": 1,
+                "name": "Tariqul Islam Badhon", 
+                "username": "badhon", 
+                "password": "badhon432", 
+                "email": "tariq.badhon@gmail.com", 
+                "access_leve": 5,
+                "role": "Drone pilot", 
+                "admin": false, 
+                "subscriber": false, 
+                "latest": true
+            },
+            {
+                "id": 2,
+                "name": "Md. Tarikul Islam", 
+                "username": "tarek", 
+                "password": "tarek321", 
+                "email": "tarikul.islam@gmail.com", 
+                "access_leve": 10,
+                "role": "Safety engineer", 
+                "admin": true, 
+                "subscriber": true, 
+                "latest": false
+            }
+        ], 
+        "online": true
+    }
+]

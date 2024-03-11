@@ -5,6 +5,9 @@ const uPass = document.getElementById("pass")
 const logInBtn = document.getElementById("loginBtn")
 
 
+const pubUrl = "http://103.73.226.60:8000/data/config.json"; 
+const locUrl = "http://127.0.0.1:5500/data/config.json"
+
 loginBtn.onclick = checkInput; 
 
 function checkInput(){
@@ -27,6 +30,13 @@ function authorize(_uName, _uPass){
     }else{
         showSnackbar(); 
     }
+
+    fetch(locUrl).then((res)=>{
+        console.log(res)       
+    }).catch(e=> console.log(e)); 
+
+
+
 }
 
 
