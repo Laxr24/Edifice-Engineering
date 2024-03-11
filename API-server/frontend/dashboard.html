@@ -10,12 +10,33 @@
     <link rel="stylesheet" href="./assets/css/snackbar.css">
     <!-- CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
 </head>
 <body>
     <h1 class="px-3 py-2 bg-green-500 rounded-md shadow-md inline-block my-4 mx-2 text-white font-bold font-mono text-xs uppercase tracking-widest">Welcome</h1>
 
-    <div class="max-w-md mx-auto rounded-md border shadow-md my-10">
-        <video src="./assets/video1.mp4" autoplay="false" controls="true"></video>
+    <div class="max-w-md p-4 mx-auto rounded-md border shadow-md my-10">
+        <video
+    id="my-video"
+    class="video-js"
+    controls
+    width="400"
+    height="300"
+    preload="true"
+    poster="MY_VIDEO_POSTER.jpg"
+    data-setup="{}"
+  >
+    <source src="http://103.73.226.60:1971/Dhaka%20Shylet%20Highway/2nd%20Data%20Collection/Videos/DS10/2nd%20portion/DJI_20240207132539_0009_V.MP4" type="video/mp4" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
     </div>
+
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
 </body>
 </html>
