@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class UserPage extends StatefulWidget {
@@ -14,8 +16,7 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text(
-              "Your username: ${widget.name}\n Password: ${widget.passwd}"),
+          child: Text("Hello world"),
         ),
       ),
     );
