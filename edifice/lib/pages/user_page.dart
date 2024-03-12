@@ -1,3 +1,5 @@
+import 'package:edifice/components/video.dart';
+import 'package:edifice/pages/page_video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -9,22 +11,24 @@ class UserPage extends StatefulWidget {
 }
 
 class _UserPageState extends State<UserPage> {
-
-String username = ""; 
-
+  String username = "";
+  // Title of the pages
+  final List<String> _titles = [
+    "Content browser",
+    "Profile Information",
+    "Settings"
+  ];
+  final List<Widget> _screens = [];
+  int screenIndex = 0;
+  int titleIndex = 0;
   @override
   void initState() {
     super.initState();
-      username = widget.name; 
-      _screens.add(ContentBrowser()); 
-      _screens.add(ProfileInformation(name: username)); 
-      _screens.add(Settings()); 
+    username = widget.name;
+    _screens.add(ContentBrowser());
+    _screens.add(ProfileInformation(name: username));
+    _screens.add(Settings());
   }
-  // Title of the pages
-  List<String> _titles = ["Content browser", "Profile Information", "Settings"];
-  final List<Widget> _screens = [];  
-  int screenIndex = 0;
-  int titleIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +115,12 @@ class _ContentBrowserState extends State<ContentBrowser> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(child: Text("Content broser")),
+      body: Column(children: [
+        VideoCard(
+          url:
+              "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        ),
+      ]),
     );
   }
 }
