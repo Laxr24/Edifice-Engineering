@@ -13,6 +13,9 @@ class _LoginPageState extends State<LoginPage> {
   final userNameController = TextEditingController();
   final passwordController = TextEditingController();
 
+  String userName = "";
+  String password = "";
+
   @override
   void dispose() {
     super.dispose();
@@ -70,20 +73,53 @@ class _LoginPageState extends State<LoginPage> {
                       horizontal: 70.0, vertical: 20.0),
                   child: PasswordField(
                     controller: passwordController,
-                    color: Colors.blue,
-                    passwordConstraint: r'.*[@$#.*].*',
                     hintText: 'Password',
-                    errorMessage:
-                        'must contain special character either . * @ # \$',
                   ),
                 ),
                 const SizedBox(
                   height: 20.0,
                 ),
-                LoginButtonSnackbar(
-                  userName: userNameController.text,
-                  userPass: passwordController.text,
-                ),
+                Builder(builder: (context) {
+                  return ElevatedButton(
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(Colors.black),
+                      foregroundColor: MaterialStatePropertyAll(Colors.white),
+                      fixedSize: MaterialStatePropertyAll(
+                        Size(300.0, 10.0),
+                      ),
+                    ),
+                    onPressed: () {
+                      //  Setting current state value.
+                      setState(() {
+                        userName = userNameController.text;
+                        password = passwordController.text;
+                      });
+                      // Resetting the controller
+                      // userNameController.dispose();
+                      // passwordController.dispose();
+
+                      debugPrint("Username $userName");
+                      debugPrint("Password $password");
+                      
+
+                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UserPage(
+                            name: userName,
+                            passwd: password,
+                          ),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18.0),
+                    ),
+                  );
+                }),
                 const Spacer(),
                 const SizedBox(
                   height: 10.0,
@@ -98,46 +134,6 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class LoginButtonSnackbar extends StatelessWidget {
-  const LoginButtonSnackbar(
-      {super.key, required this.userName, required this.userPass});
-  final userName, userPass;
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-        onPressed: () {
-          final snackBar = SnackBar(
-            content: Text("Username: $userName Pass: $userPass"),
-          );
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
-          // Navigator.pop(context);
-          // Navigator.of(context).push(
-          //   MaterialPageRoute(
-          //     builder: (context) {
-          //       if (userPass != null && userName != null) {
-          //         return const UserPage(
-          //           name: " ",
-          //           passwd: "kothinPass",
-          //         );
-          //       } else {
-          //         return const LoginPage();
-          //       }
-          //     },
-          //   ),
-          // );
-        },
-        style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.black),
-            foregroundColor: MaterialStatePropertyAll(Colors.white),
-            fixedSize: MaterialStatePropertyAll(Size(300, 10))),
-        child: const Text('Login'),
       ),
     );
   }
