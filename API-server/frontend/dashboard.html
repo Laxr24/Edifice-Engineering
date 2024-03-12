@@ -19,7 +19,8 @@
   <nav>
     <div class="py-2 shadow-md relative flex items-center">
       <img src="./assets/edifice_logo.png" class="w-20 ml-8" alt="" srcset="">
-      <div class="md:ml-36">
+      <!-- Desktop Menu -->
+      <div class="md:ml-36 md:block hidden">
         <ul class="flex">
           <li><a class="bg-green-200 rounded-md px-3 py-1 shadow-sm hover:bg-green-300 transition uppercase text-sm inline mx-2" href="#">Browse content</a></li>
           <li><a class="bg-gray-50 rounded-md px-3 py-1 shadow-sm hover:bg-green-300 transition uppercase text-sm inline mx-2" href="#">Profile information</a></li>
@@ -27,6 +28,24 @@
           <li><a class="bg-red-500 text-white font-bold rounded-md px-3 py-1 shadow-sm hover:bg-green-300 transition uppercase text-sm inline mx-2" href="#">Logout</a></li>
         </ul>
       </div>
+      <!-- End desktop menu -->
+
+      <!-- Burgar menu start -->
+      <div id="menu_open_btn" class="md:hidden hover:cursor-pointer absolute right-10 p-2 rounded-md bg-gray-300">
+        <img src="./assets/ham_icon.svg" width="40" alt="" srcset="">
+      </div>
+      <!-- Burgar menu end -->
+
+      <!-- Mobile Menu -->
+      <div id="mobile_menu" class="fixed transition top-0 right-[-9999px] w-[300px] z-10 bg-gray-50 h-screen  shadow-md py-3">
+        <ul>
+          <li><img id="menu_close_btn" src="./assets/close_icon.svg" class="w-6 mx-auto my-4 hover:cursor-pointer" alt="" srcset=""></li>
+          <li><a class="text-sm text-center block py-4 bg-green-200 hover:cursor-pointer hover:bg-green-300 transition" href="#">Browse contents</a></li>
+          <li><a class="text-sm text-center block py-4 hover:cursor-pointer hover:bg-green-300 transition " href="#">Profile information</a></li>
+          <li><a class="text-sm text-center block py-4 hover:cursor-pointer hover:bg-green-300 transition " href="#">Settings</a></li>
+        </ul>
+      </div>
+      <!-- Mobile Menu de end -->
     </div>
   </nav>
   <section>
@@ -92,7 +111,18 @@
 
   <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
   <script src="./assets/js/app.js"></script>
+  <script>
+    const menu_open_btn = document.getElementById("menu_open_btn"); 
+    const menu_close_btn = document.getElementById("menu_close_btn"); 
+    const mobile_menu = document.getElementById("mobile_menu"); 
 
+    menu_open_btn.onclick = ()=>{
+      mobile_menu.style.right = "0px"
+    }
+    menu_close_btn.onclick = ()=>{
+        mobile_menu.style.right = "-999px"
+    }
+  </script>
 </body>
 
 </html>

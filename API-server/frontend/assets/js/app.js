@@ -5,6 +5,7 @@ const uPass = document.getElementById("pass")
 const logInBtn = document.getElementById("loginBtn")
 
 
+
 const pubUrl = "http://103.73.226.60:8000/data/config.json"; 
 const locUrl = "http://127.0.0.1:5500/data/config.json"
 
@@ -42,6 +43,16 @@ function authorize(_uName, _uPass){
 
 
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
