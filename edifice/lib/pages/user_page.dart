@@ -1,5 +1,4 @@
 import 'package:edifice/components/video.dart';
-import 'package:edifice/pages/page_video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

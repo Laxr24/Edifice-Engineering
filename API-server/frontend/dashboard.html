@@ -1,42 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edifice | Login</title>
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edifice | Login</title>
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 
-    <!-- StyleSheets -->
-    <link rel="stylesheet" href="./assets/css/snackbar.css">
-    <!-- CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+  <!-- StyleSheets -->
+  <link rel="stylesheet" href="./assets/css/snackbar.css">
+  <!-- CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
 </head>
+
 <body>
-    <h1 class="px-3 py-2 bg-green-500 rounded-md shadow-md inline-block my-4 mx-2 text-white font-bold font-mono text-xs uppercase tracking-widest">Welcome</h1>
 
-    <div class="max-w-md p-4 mx-auto rounded-md border shadow-md my-10">
-        <video
-    id="my-video"
-    class="video-js"
-    controls
-    width="400"
-    height="300"
-    preload="true"
-    poster="https://www.techsmith.com/blog/wp-content/uploads/2021/02/video-thumbnails-hero-1.png"
-    data-setup="{}"
-  >
-    <source src="http://103.73.226.60:1971/Dhaka%20Shylet%20Highway/2nd%20Data%20Collection/Videos/DS10/2nd%20portion/DJI_20240207132539_0009_V.MP4" type="video/mp4" />
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
+  <nav>
+    <div class="py-2 shadow-md relative flex items-center">
+      <img src="./assets/edifice_logo.png" class="w-20 ml-8" alt="" srcset="">
+      <div class="md:ml-36">
+        <ul class="flex">
+          <li><a class="bg-green-200 rounded-md px-3 py-1 shadow-sm hover:bg-green-300 transition uppercase text-sm inline mx-2" href="#">Browse content</a></li>
+          <li><a class="bg-gray-50 rounded-md px-3 py-1 shadow-sm hover:bg-green-300 transition uppercase text-sm inline mx-2" href="#">Profile information</a></li>
+          <li><a class="bg-gray-50 rounded-md px-3 py-1 shadow-sm hover:bg-green-300 transition uppercase text-sm inline mx-2" href="#">Settings</a></li>
+          <li><a class="bg-red-500 text-white font-bold rounded-md px-3 py-1 shadow-sm hover:bg-green-300 transition uppercase text-sm inline mx-2" href="#">Logout</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
+  <section>
+    <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+      <!-- Video card -->
+      <div class="max-w-md p-4 w-full mx-auto rounded-md border shadow-md my-10">
+        <video id="my-video" class="video-js" controls width="400" height="225" preload="true" poster=""
+          data-setup="{}">
+          <source src="http://103.73.226.60:8000/assets/video2.mp4" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </video>
+        <h2 class="text-md mt-2 font-bold text-gray-800 uppercase">Dhaka Shyllet Highway Arial DS2 - 1</h2>
+        <p class="text-sm text-gray-600 uppercase">Video duration 28min. 42sec.</p>
+        <p class="text-sm text-gray-600 uppercase">Area covered: 18 K.M.</p>
+        <p class="text-sm text-gray-600 uppercase">Footage type: Arial</p>
+        <p class="text-sm text-gray-600 uppercase">Shoot with: Industry Standard RTK Arial System</p>
+      </div>
+      <!-- Video card -->
 
-    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+      <!-- Video card -->
+      <div class="max-w-md p-4 w-full mx-auto rounded-md border shadow-md my-10">
+        <video id="my-video" class="video-js" controls width="400" height="225" preload="true" poster=""
+          data-setup="{}">
+          <source src="http://103.73.226.60:8000/assets/video2.mp4" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </video>
+        <h2 class="text-md mt-2 font-bold text-gray-800 uppercase">Dhaka Maymenshing Highway Arial DS2 - 2</h2>
+        <p class="text-sm text-gray-600 uppercase">Video duration 28min. 42sec.</p>
+        <p class="text-sm text-gray-600 uppercase">Area covered: 18 K.M.</p>
+        <p class="text-sm text-gray-600 uppercase">Footage type: Arial</p>
+        <p class="text-sm text-gray-600 uppercase">Shoot with: Industry Standard RTK Arial System</p>
+      </div>
+      <!-- Video card -->
+      <!-- Video card -->
+      <div class="max-w-md p-4 w-full mx-auto rounded-md border shadow-md my-10">
+        <video id="my-video" class="video-js" controls width="400" height="225" preload="true" poster=""
+          data-setup="{}">
+          <source src="http://103.73.226.60:8000/assets/video2.mp4" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </video>
+        <h2 class="text-md mt-2 font-bold text-gray-800 uppercase">Dhaka Barishal Highway Arial DS2 - 3</h2>
+        <p class="text-sm text-gray-600 uppercase">Video duration 28min. 42sec.</p>
+        <p class="text-sm text-gray-600 uppercase">Area covered: 18 K.M.</p>
+        <p class="text-sm text-gray-600 uppercase">Footage type: Arial</p>
+        <p class="text-sm text-gray-600 uppercase">Shoot with: Industry Standard RTK Arial System</p>
+      </div>
+      <!-- Video card -->
+
+    </div>
+  </section>
+
+  <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+  <script src="./assets/js/app.js"></script>
+
 </body>
+
 </html>
