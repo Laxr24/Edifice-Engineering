@@ -94,10 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                         userName = userNameController.text;
                         password = passwordController.text;
                       });
-                      // Resetting the controller
-                      // userNameController.dispose();
-                      // passwordController.dispose();
-
+                    
                       debugPrint("Username $userName");
                       debugPrint("Password $password");
                       

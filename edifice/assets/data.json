@@ -1,0 +1,12 @@
+{
+    "items": [
+      {
+        "id": "1",
+        "name": "User 1",
+        "description": "This user is an admin of Edifice and has access level 10. User has permission to view update, upload, dowload access.", 
+        "role": "admin", 
+        "access_level": 10,
+        "user_folder": "/user1"
+      }
+    ]
+  }
