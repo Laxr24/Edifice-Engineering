@@ -115,12 +115,26 @@ class _ContentBrowserState extends State<ContentBrowser> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(children: [
-        VideoCard(
-          url:
-              "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-        ),
-      ]),
+      body: SingleChildScrollView(
+        child: Column(children: [
+          VideoCard(
+            url:
+                "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+          ),
+          VideoCard(
+            url:
+                "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+          ),
+          VideoCard(
+            url:
+                "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+          ),
+          VideoCard(
+            url:
+                "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+          ),
+        ]),
+      ),
     );
   }
 }
