@@ -80,41 +80,9 @@ class _LoginPageState extends State<LoginPage> {
                   height: 20.0,
                 ),
                 Builder(builder: (context) {
-                  return ElevatedButton(
-                    style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(Colors.black),
-                      foregroundColor: MaterialStatePropertyAll(Colors.white),
-                      fixedSize: MaterialStatePropertyAll(
-                        Size(300.0, 10.0),
-                      ),
-                    ),
-                    onPressed: () {
-                      //  Setting current state value.
-                      setState(() {
-                        userName = userNameController.text;
-                        password = passwordController.text;
-                      });
-                    
-                      debugPrint("Username $userName");
-                      debugPrint("Password $password");
-                      
-
-                      Navigator.pop(context);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => UserPage(
-                            name: userName,
-                            passwd: password,
-                          ),
-                        ),
-                      );
-                    },
-                    child: const Text(
-                      "Login",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 18.0),
-                    ),
+                  return LoginButton(
+                    userNameController: userNameController,
+                    passwordController: passwordController,
                   );
                 }),
                 const Spacer(),
@@ -131,6 +99,68 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class LoginButton extends StatefulWidget {
+  LoginButton({super.key, this.userNameController, this.passwordController});
+  final userNameController, passwordController;
+
+  @override
+  State<LoginButton> createState() => _LoginButtonState();
+}
+
+class _LoginButtonState extends State<LoginButton> {
+  String userName = "";
+  String password = "";
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: const ButtonStyle(
+        backgroundColor: MaterialStatePropertyAll(Colors.black),
+        foregroundColor: MaterialStatePropertyAll(Colors.white),
+        fixedSize: MaterialStatePropertyAll(
+          Size(300.0, 10.0),
+        ),
+      ),
+      onPressed: () {
+        //  Setting current state value.
+        setState(() {
+          userName = widget.userNameController.text;
+          password = widget.passwordController.text;
+        });
+
+        debugPrint("Username $userName");
+        debugPrint("Password $password");
+
+        if (userName == "user1" || userName == "user2" || userName == "user3") {
+          if (password == "user1pass" ||
+              password == "user2pass" ||
+              password == "user3pass") {
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => UserPage(
+                  name: userName,
+                  passwd: password,
+                ),
+              ),
+            );
+          } else {
+            final toast = SnackBar(
+              content: Text("Wrong Username. Try again"),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(toast);
+          }
+        }
+      },
+      child: const Text(
+        "Login",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
       ),
     );
   }

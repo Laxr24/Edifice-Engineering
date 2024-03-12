@@ -9,13 +9,20 @@ class UserPage extends StatefulWidget {
 }
 
 class _UserPageState extends State<UserPage> {
+
+String username = ""; 
+
+  @override
+  void initState() {
+    super.initState();
+      username = widget.name; 
+      _screens.add(ContentBrowser()); 
+      _screens.add(ProfileInformation(name: username)); 
+      _screens.add(Settings()); 
+  }
   // Title of the pages
   List<String> _titles = ["Content browser", "Profile Information", "Settings"];
-  List<Widget> _screens = [
-    ContentBrowser(),
-    ProfileInformation(name: "User 1"),
-    Settings()
-  ];
+  final List<Widget> _screens = [];  
   int screenIndex = 0;
   int titleIndex = 0;
 
