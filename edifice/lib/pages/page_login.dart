@@ -1,5 +1,6 @@
 import 'package:edifice/pages/user_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:passwordfield/passwordfield.dart';
 
 class LoginPage extends StatefulWidget {
@@ -35,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 const Spacer(),
                 const Row(
-                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
                       padding: EdgeInsets.only(right: 10.0),
@@ -105,7 +106,9 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class LoginButton extends StatefulWidget {
-  LoginButton({super.key, this.userNameController, this.passwordController});
+  const LoginButton(
+      {super.key, this.userNameController, this.passwordController});
+  // ignore: prefer_typing_uninitialized_variables
   final userNameController, passwordController;
 
   @override
@@ -151,11 +154,16 @@ class _LoginButtonState extends State<LoginButton> {
               ),
             );
           } else {
-            final toast = SnackBar(
-              content: Text("Wrong Username. Try again"),
+            const toast = SnackBar(
+              content: Text("Wrong password. Try again"),
             );
             ScaffoldMessenger.of(context).showSnackBar(toast);
           }
+        } else {
+          const toast = SnackBar(
+            content: Text("Wrong Username. Try again"),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(toast);
         }
       },
       child: const Text(

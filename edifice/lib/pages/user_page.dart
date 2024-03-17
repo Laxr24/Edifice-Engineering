@@ -1,4 +1,5 @@
 import 'package:edifice/components/video.dart';
+import 'package:edifice/pages/page_profileinformation.dart';
 import 'package:edifice/pages/page_video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,7 +20,7 @@ class _UserPageState extends State<UserPage> {
     "Settings"
   ];
   final List<Widget> _screens = [];
-  int screenIndex = 0;
+  int screenIndex = 1;
   int titleIndex = 0;
   @override
   void initState() {
@@ -118,8 +119,7 @@ class _ContentBrowserState extends State<ContentBrowser> {
       body: SingleChildScrollView(
         child: Column(children: [
           VideoCard(
-            url:
-                "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+            url: "http://103.73.226.60:8000/assets/video2.mp4",
           ),
           VideoCard(
             url:
@@ -135,35 +135,6 @@ class _ContentBrowserState extends State<ContentBrowser> {
           ),
         ]),
       ),
-    );
-  }
-}
-
-class ProfileInformation extends StatelessWidget {
-  const ProfileInformation({super.key, required this.name});
-  final String name;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-          child: Column(
-        children: [
-          const SizedBox(
-            height: 100.0,
-          ),
-          Text(
-            "You are $name",
-            style: const TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(30.0),
-            child: Text(
-                "More information about your profile will be inserted here. Currently we are updating our database. Please be patient.",
-                style: TextStyle(fontSize: 20.0)),
-          ),
-        ],
-      )),
     );
   }
 }
