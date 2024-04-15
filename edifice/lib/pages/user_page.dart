@@ -112,7 +112,7 @@ class ContentBrowser extends StatefulWidget {
 class _ContentBrowserState extends State<ContentBrowser> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(children: [
