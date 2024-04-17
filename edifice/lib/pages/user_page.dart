@@ -1,4 +1,5 @@
 import 'package:edifice/components/video.dart';
+import 'package:edifice/pages/page_profileinformation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -143,26 +144,13 @@ class ProfileInformation extends StatelessWidget {
   final String name;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-          child: Column(
-        children: [
-          const SizedBox(
-            height: 100.0,
-          ),
-          Text(
-            "You are $name",
-            style: const TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(30.0),
-            child: Text(
-                "More information about your profile will be inserted here. Currently we are updating our database. Please be patient.",
-                style: TextStyle(fontSize: 20.0)),
-          ),
-        ],
-      )),
+    return ProfileCard(
+      name: name,
+      age: 22,
+      role: "Manager",
+      level: 3,
+      image: "",
+      info: "This information of profile",
     );
   }
 }
